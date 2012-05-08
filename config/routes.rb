@@ -1,4 +1,6 @@
 Studentmemory::Application.routes.draw do
+  resources :professors
+
   resources :terms
 
   resources :groups
