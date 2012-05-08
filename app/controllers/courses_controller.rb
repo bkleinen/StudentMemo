@@ -27,7 +27,12 @@ class CoursesController < ApplicationController
   # GET /courses/new
   # GET /courses/new.json
   def new
-    @course = Course.new
+    if term_id = params[:term]
+      term = Term.find(term_id)
+      @course = term.courses.build
+    else
+       @course = Course.new
+    end
     assign_term_selection_list
     respond_to do |format|
       format.html # new.html.erb

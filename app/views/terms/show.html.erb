@@ -4,7 +4,16 @@
   <b>Name:</b>
   <%= @term.name %>
 </p>
+<p>Courses in this Term</p>
+<ul>
+
+<% @courses.each do |course| %>
+  <li><%= link_to course.name, course %></li>
+<% end %>
+
+</ul>
 
 
+<%= link_to 'New Course', new_course_path(:term => @term)%> |
 <%= link_to 'Edit', edit_term_path(@term) %> |
 <%= link_to 'Back', terms_path %>
