@@ -1,4 +1,3 @@
-class Student < ActiveRecord::Base
+class Student < Person
   belongs_to :group
-  has_and_belongs_to_many :courses
 end
