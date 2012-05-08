@@ -1,4 +1,10 @@
 Studentmemory::Application.routes.draw do
+  resources :groups
+
+  resources :courses
+
+  resources :students
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
