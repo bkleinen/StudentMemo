@@ -9,7 +9,9 @@
   <b>Last:</b>
   <%= @student.last %>
 </p>
-
+<%= image_tag @student.picture.url %>
+<%= image_tag @student.picture.url(:medium) %>
+<%= image_tag @student.picture.url(:thumb) %>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

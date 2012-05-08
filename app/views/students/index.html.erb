@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+	<th>Picture</th>
     <th>First</th>
     <th>Last</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @students.each do |student| %>
   <tr>
+	<td><%= image_tag student.picture.url(:thumb) %></td>
     <td><%= student.first %></td>
     <td><%= student.last %></td>
     <td><%= link_to 'Show', student %></td>
