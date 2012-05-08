@@ -4,7 +4,9 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-
+    t = @courses.collect{ | c|  c.term.name ? [c.id,c.term.name] : [c.id, "no term assigned"] }
+    @terms =  Hash[*(t.flatten)]
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
@@ -15,7 +17,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+    @term = @course.term
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }

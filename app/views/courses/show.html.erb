@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Course Name:</b>
   <%= @course.name %>
 </p>
 
+
+<p>
+  <b>Term:</b>
+  <%= link_to @term.name, term_path(@term) %>
+</p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
