@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+
   # GET /courses
   # GET /courses.json
   def index
@@ -25,7 +26,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     @course = Course.new
-
+    assign_term_selection_list
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @course }
@@ -35,6 +36,7 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    assign_term_selection_list
   end
 
   # POST /courses
@@ -79,5 +81,10 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url }
       format.json { head :no_content }
     end
+  end
+  
+private 
+  def assign_term_selection_list
+    @term_selection_list = Term.all.collect {|term| [ term.name, term.id ] }
   end
 end

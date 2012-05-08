@@ -15,6 +15,12 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%= f.label :term_id %><br />
+    <%= select("course", "term_id", @term_selection_list, {:include_blank => 'None', :prompt => 'Select Term'}) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
