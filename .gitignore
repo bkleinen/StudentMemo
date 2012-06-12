@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore Paperclip Images.
-public/system/students/pictures//*
+public/system/students/pictures/*
